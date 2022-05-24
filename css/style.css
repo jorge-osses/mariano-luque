@@ -6,12 +6,50 @@ body {
 nav.navbar{
     background-color:#004643;
     font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
 }
 nav.navbar a, nav.navbar ul{
     color:#E6D06A;
 }
-.contenedorHeader {
+.header-uno{
     background-image: url(../fotos/banda.jpg);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.h2h{
+    position: relative;
+    font-size: 6vw;
+    color: #252839;
+    -webkit-text-stroke: .2vw #383d52;
+    text-transform: uppercase;
+}
+/*====== Animacion ======*/
+.h2h::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color: #01fe87;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid #01fe87;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+@keyframes animate {
+    0%,10%,100%{
+        width: 0%;
+    }
+    70%,90%{
+        width: 100%;
+    }
+}
+.header-dos{
+    background-image: url(../fotos/cantante2.jpg);
+}
+.contenedorHeader {
     height: 500px;
     background-color: #04706b;
     background-repeat: no-repeat;
