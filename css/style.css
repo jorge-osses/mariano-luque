@@ -183,3 +183,9 @@ legend {
     font-weight: bold;
     font-size: 32px;
 }
+
+@media screen and(max-width:748px) {
+    .percent-80{
+        padding: 0 5px;
+    }
+}
