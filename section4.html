@@ -7,6 +7,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/brands.min.css" integrity="sha512-OivR4OdSsE1onDm/i3J3Hpsm5GmOVvr9r49K3jJ0dnsxVzZgaOJ5MfxEAxCyGrzWozL9uJGKz6un3A7L+redIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <title>Contacto</title>
 </head>
 <body>
@@ -29,40 +33,27 @@
         </div>                
     </nav>
     <header>
-        <div>
-            <h1>Mariano Luque</h1>
+        <div class="contenedorHeader header-cuatro">
+            <h1 class="tituloPrincipal animate__animated animate__zoomInUp">Contacto</h1>
         </div>
-        <hr>
     </header>
 
     <section>
-        <fieldset>
-            <legend>Deja Tu Comentario</legend>
+        <div class="contactoFormulario">
 
-            <form action="#">
-                <div>
-                    <label for="comentarios">Escribe aquí: </label>
-                    <textarea name="comentarios" cols="30" rows="10"></textarea>
+            <form action="" name="formulario" method="get">
+                <h3>ESCRIBINOS</h3>
+                <div class="inputContainer">
+                    <label for="name">Nombre*</label>
+                    <input type="text" name="nombre" placeholder="Introduce tu nombre" id="name">
                 </div>
-                <br>
-                <div>
-                    <label for="nombre">Nombre: </label>
-                    <input type="text" name="nombre" placeholder="Introduce tu nombre" id="" required>
+                <div class="inputContainer">
+                    <label for="email">Email*</label>
+                    <input type="email" name="email" id="email" placeholder="email@email.com" required>
                 </div>
-
-                <div>
-                    <label for="apellido">Apellido: </label>
-                    <input type="text" name="apellido" placeholder="Introduce tu apellido" id="">
-                </div>
-
-                <div>
-                    <label for="email">Email: </label>
-                    <input type="email" name="email" placeholder="nombre@email.com" id="" required>
-                </div>
-
                 <div>
                     <label for="provincia">De que provincia eres: </label>
-                    <select name="provincia" id="">
+                    <select name="provincia" id="provincia">
                         <option value="null">----</option>
                         <option value="buenos aires">Buenos Aires</option>
                         <option value="catamarca">Catamarca</option>
@@ -88,18 +79,21 @@
                         <option value="tucuman">Tucumán</option>
                     </select>
                 </div>
-
-                <div>
-                    <label for="newsletter">Quiero recibir información de la banda </label>
-                    <input type="checkbox" name="newsletter" id="">
+                
+                <div class="inputContainer">
+                    <label for="terminos">Quiero recibir información de la banda </label>
+                    <input type="checkbox" name="terminos" id="terminos">
                 </div>
-
+                <div class="inputContainer">
+                    <label for="comentarios">Mensaje</label>
+                    <textarea name="comentarios" cols="" rows="10"></textarea>               
+                </div>
                 <div>
-                    <input type="submit" value="enviar" class="boton">
-                    <input type="reset" value="borrar" class="boton">
+                    <button type="submit" value="enviar" class="boton" id="btn">Enviar</button>   
+                    <button type="reset" value="borrar" class="boton">Borrar</button>
                 </div>
             </form>
-        </fieldset>
+        </div>
     </section>
 
     <footer id="footer">
@@ -120,6 +114,45 @@
         </div>
     </footer>
 
+    <script>
+        (function(){
+            var formulario = document.getElementsByName('formulario')[0],
+            elementos = formulario.elements,
+            boton = document.getElementById('btn');
+            var validarNombre = function(e){
+                if(formulario.nombre.value == 0) {
+                    alert("Completa el campo nombre")
+                    e.preventDefault();
+                }
+            };
+            var validarEmail = function(e){
+                if(formulario.email.value == 0) {
+                    alert("Completa el campo nombre")
+                    e.preventDefault();
+                }
+            };
+            var select = document.getElementById('provincia');
+            var validarSelect = function(e){
+                if(select.value != 'null') {
+                } else {
+                    alert("Elije una Provincia")
+                    e.preventDefault();
+                }
+            };
+            var validarCheckBox = function(e){
+                if(formulario.terminos.checked == false){
+                    alert("Acepta recibir información de la banda")
+                    e.preventDefault();
+                }
+            };
+            var validar = function(e){
+                validarNombre(e);
+                validarSelect(e);
+                validarCheckBox(e);
+            };
+            formulario.addEventListener('submit', validar);
+        }())
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

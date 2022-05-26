@@ -17,6 +17,9 @@ nav.navbar a, nav.navbar ul{
     align-items: center;
     justify-content: center;
 }
+.header-cuatro{
+    background-image: url("../fotos/banda1.jpg");
+}
 .h2h{
     position: relative;
     font-size: 6vw;
@@ -176,36 +179,59 @@ footer a:hover{
     justify-content: center;
     gap: 2rem;
 }
-.disco {
-    color: #FAF4D3;
-    font-style: italic;
-}
-table {
-    border:#080808 solid 3px;
-    background-color: #E6D06A;
-}
-.titulo-disco {
-    color:#f2cf07;
-    font-variant:small-caps;
-}
-tr th {
-    background-color: #D1AC00;
-    color:#080808;
-    border:#080808 solid 3px;
-}
-tr td {
-    border:#080808 solid 3px;
-    background-color:#00968e;  
-}
-fieldset, legend {
-    background-color:#E6D06A;
-    border:#080808 solid 3px;
-}
-legend {
+.discografia, .canciones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 40rem;
+    margin: 0 auto;
     text-align: center;
-    font-weight: bold;
-    font-size: 32px;
 }
+.contactoFormulario{
+    width: 50vw;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    gap: 10vw;
+    margin: 3rem auto;
+}
+.contactoFormulario h3 {
+    font-size: 1.75em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    margin-bottom: 1.2em;
+}
+input, textarea {
+    color:rgba(240, 248, 255, 0.678);
+    font-size: 1em;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 4px;
+    resize: none;
+    padding: 10px;
+}
+label {
+    font-size: 1em;
+    font-weight:600;
+}
+button {
+    background-color: #E6D06A;
+    color: black;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 25vh;
+    padding: .7em 0;
+    cursor: pointer;
+    width: 49%;
+}
+
 @media screen and (max-width:1025px) {
     .galeria{
         grid-template-columns: auto auto auto;
@@ -232,5 +258,12 @@ legend {
     #footer{
         flex-direction: column;
         text-align: center;
+    }
+    .contactoFormulario{
+        width:95vw;
+    }
+    button{
+        width:100%;
+        margin:.3em auto;
     }
 }
