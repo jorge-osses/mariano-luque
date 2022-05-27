@@ -133,21 +133,24 @@ hr {
 }
 /*///// FOOTER ////////*/
 footer{
+    background-color: #292828;
+    padding-bottom: 2em;
+}
+#footer{
     display: flex;
     justify-content:space-around;
     text-transform: uppercase;
     padding-bottom:2em ;
-    background-color: #292828;
 }
-footer h4{
+#footer h4{
     margin: 1em auto;
     color: aliceblue;
 }
-footer ul, footer a{
+#footer ul, #footer a{
     text-decoration: none;
     list-style:none;
 }
-footer a:hover{
+#footer a:hover{
     color: aliceblue;
 }
 #footer i{
@@ -179,7 +182,18 @@ footer a:hover{
     justify-content: center;
     gap: 2rem;
 }
-.discografia, .canciones {
+.copyright{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.copyright p a{
+    text-decoration: none;
+}
+.copyright p a:hover {
+    color:#01fe87;
+}
+.canciones {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -187,6 +201,9 @@ footer a:hover{
     max-width: 40rem;
     margin: 0 auto;
     text-align: center;
+}
+.canciones h2{
+    margin: 2em auto;
 }
 .contactoFormulario{
     width: 50vw;
@@ -220,7 +237,7 @@ label {
     font-size: 1em;
     font-weight:600;
 }
-button {
+.boton {
     background-color: #E6D06A;
     color: black;
     font-weight: 900;
@@ -231,7 +248,34 @@ button {
     cursor: pointer;
     width: 49%;
 }
-
+.discografia{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    justify-content: space-around;
+}
+.disco{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #E6D06A;
+}
+.nombreDisco{
+    font-weight: 800;
+    margin: 1em auto;
+}
+.disco img{
+    max-width:15rem;
+    height:auto;
+    margin:1rem;
+}
+.songs{
+    list-style: none;
+}
+.centerTitle{
+    text-align:center;
+    margin:2em auto;
+}
 @media screen and (max-width:1025px) {
     .galeria{
         grid-template-columns: auto auto auto;
